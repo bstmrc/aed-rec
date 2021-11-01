@@ -1,4 +1,4 @@
-from registro import *
+from Registro import *
 import random
 
 
@@ -8,7 +8,7 @@ def transformar_a_csv(reg):
 
 
 def generar_csv():
-    n = 100
+    n = 20
     nom_cad = 'Macarena', 'Toxic', 'Yesterday', 'Good Vibrations', 'Respect', 'Dancing Queen', 'Bohemian Rhapsody'\
         , 'Staying Alive', 'Thriller', 'When Doves Cry', 'Like a Prayer', 'Take on me', 'With or without you', 'Wonderwall', \
               'Smells like teen spirit', 'Baby One More Time', 'Rehab', 'Rolling in the Deep', 'Poker Face', "Hips don't lie", 'Get Lucky', \
@@ -16,10 +16,11 @@ def generar_csv():
     m = open('musica.csv', 'wt')
     for i in range(n):
         nom = random.choice(nom_cad) + str(i)
-        gen = random.choice(gen_cad)
-        idioma = random.choice(id_cad)
+        gen = random.randint(0, 5) #random.choice(gen_cad)
+        idioma = random.randint(0, 4) #random.choice(id_cad)
         linea = transformar_a_csv(Tema(nom, gen, idioma))
         m.write(linea)
+    print('Archivo generado')
     m.close()
 
 
