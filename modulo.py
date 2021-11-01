@@ -4,6 +4,14 @@ from Registro import *
 import pickle
 import os.path
 
+def print_menu():
+    """Printea el menú principal"""
+    menu = ('--' * 40) + '\n\t\t\t\t\t\t\t\tMENÚ DE OPCIONES\n' + ('--' * 40) + '\n1. \n2. \n' \
+           + '3. \n4. \n5. \n' \
+           + '6. Generar binario por idioma\n7. Leer binario\n0. SALIR\n' + ('--' * 40)
+
+    print(menu)
+
 
 def add_in_order(v, reg):
     izq, der = 0, len(v) - 1
