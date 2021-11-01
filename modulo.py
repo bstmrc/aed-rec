@@ -45,9 +45,13 @@ def mostrar_vector(v):
         print(v[i])
 
 
-def gen_binario(i, vec):
-
+def gen_fd(i):
     fd = 'MusicaIdioma' + str(i) + '.dat'
+    return fd 
+
+
+def gen_binario(i, vec):
+    fd = gen_fd(i)
     
     m = open(fd, 'wb')
 
@@ -59,7 +63,7 @@ def gen_binario(i, vec):
 
 
 def leer_binario(i):
-    fd = 'MusicaIdioma' + str(i) + '.dat'
+    fd = gen_fd(i)
     tam = os.path.getsize(fd)
 
     m = open(fd, 'rb')
