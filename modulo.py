@@ -53,8 +53,20 @@ def gen_binario(i, vec):
 
     for item in vec:
         if item.idioma == i:
-            pickle.dump(i, m)
-            pickle.dump('\n', m)
+            pickle.dump(item, m)
+
+    m.close()
+
+
+def leer_binario(i):
+    fd = 'MusicaIdioma' + str(i) + '.dat'
+    tam = os.path.getsize(fd)
+
+    m = open(fd, 'rb')
+
+    while m.tell() < tam:
+        item = pickle.load(m)
+        print(item)
 
     m.close()
 
@@ -66,6 +78,7 @@ def principal():
     mostrar_vector(v)
     i = int(input('Idioma: '))
     gen_binario(i, v)
+    leer_binario(i)
 
 
 if __name__ == '__main__':
