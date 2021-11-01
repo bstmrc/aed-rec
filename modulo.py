@@ -64,6 +64,8 @@ def principal():
     print('prueba')
     cargar_vector(v, 'musica.csv')
     mostrar_vector(v)
+    i = int(input('Idioma: '))
+    gen_binario(i, v)
 
 
 if __name__ == '__main__':
