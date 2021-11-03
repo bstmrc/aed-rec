@@ -4,6 +4,7 @@ from Registro import *
 import pickle
 import os.path
 
+
 def print_menu():
     """Printea el menú principal"""
     menu = ('--' * 40) + '\n\t\t\t\t\t\t\t\tMENÚ DE OPCIONES\n' + ('--' * 40) + '\n1. \n2. \n' \
@@ -107,6 +108,27 @@ def mostrar_lista_opt2(vec):
     for elem in vec:
         if elem != '':
             print(elem)
+
+def generar_matriz(v):
+    mat = [[0] * 5 for i in range(6)]
+    for i in range(len(v)):
+        f = v[i].gen
+        c = v[i].idioma
+        mat[f][c] += 1
+    return mat
+
+
+def mostrar_matriz(mat):
+    for f in range(len(mat)):
+        for c in range(len(mat[f])):
+            if mat[f][c] != 0:
+                write(f, c, mat)
+
+
+def write(f, c, mat):
+    s = '|Genero:{:<15} |Idioma: {:<15} |Canridad de temas: {:>3}'
+    s = s.format(gen_cad[f], id_cad[c], mat[f][c])
+    print(s)
 
 
 def principal():
