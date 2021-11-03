@@ -68,6 +68,7 @@ def gen_binario(i, vec):
             pickle.dump(item, m)
 
     m.close()
+    print('Archivo binario "', fd, '" generado con éxito')
 
 
 def leer_binario(i):

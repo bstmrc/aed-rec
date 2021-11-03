@@ -1,5 +1,6 @@
 # main
 import modulo as m
+import os
 
 def main():
     opc = -1
@@ -25,9 +26,16 @@ def main():
 
             elif opc == 7:
                 idioma_req = int(input('Ingrese idioma: '))
-                m.leer_binario(idioma_req)
 
- 
+                fd = m.gen_fd(idioma_req)
+
+                if os.path.exists(fd):
+                    m.leer_binario(idioma_req)
+                else:
+                    print('El archivo "', fd, '" no existe, pero será creado.')
+                    m.gen_binario(idioma_req, temas)
+                    m.leer_binario(idioma_req)
+
 
 if __name__ == '__main__':
     main()
