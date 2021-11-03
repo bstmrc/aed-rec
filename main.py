@@ -14,7 +14,6 @@ def main():
             m.cargar_vector(temas, 'musica.csv')
             m.mostrar_vector(temas)
 
-
         else:
             if len(temas) == 0:
                 print('ERROR: ')
@@ -31,6 +30,10 @@ def main():
                     print('No se ha podido completar la lista con', n, 'canciones')
 
                 m.mostrar_lista_opt2(lista_opt2)
+
+            elif opc == 3:
+                mat = m.generar_matriz(temas)
+                m.mostrar_matriz(mat)
 
             elif opc == 6:
                 idioma_req = int(input('Ingrese idioma que desea filtrar: '))

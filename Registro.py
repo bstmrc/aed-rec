@@ -10,6 +10,6 @@ class Tema:
         self.idioma = idioma
 
     def __str__(self):
-        s = '|Título:{:<23} |Género: {:<15} |Idioma: {:>3}'
+        s = '|Título:{:<30} |Género: {:<15} |Idioma: {:>3}'
         s = s.format(self.nom, gen_cad[self.gen], id_cad[self.idioma])
         return s
