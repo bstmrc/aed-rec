@@ -14,11 +14,16 @@ def main():
             m.cargar_vector(temas, 'musica.csv')
             m.mostrar_vector(temas)
 
-            pass
 
         else:
             if len(temas) == 0:
                 print('ERROR: ')
+
+            elif opc == 2:
+                n = int(input('Ingrese cantidad de temas: '))
+                lista_opt2 = [''] * n
+                i = int(input('Ingrese el idioma: '))
+
 
             elif opc == 6:
                 idioma_req = int(input('Ingrese idioma que desea filtrar: '))
