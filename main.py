@@ -24,6 +24,13 @@ def main():
                 lista_opt2 = [''] * n
                 i = int(input('Ingrese el idioma: '))
 
+                m.fill_list(lista_opt2, i, temas)
+
+                empty_flag = m.empty_pos(lista_opt2)
+                if empty_flag:
+                    print('No se ha podido completar la lista con', n, 'canciones')
+
+                m.mostrar_lista_opt2(lista_opt2)
 
             elif opc == 6:
                 idioma_req = int(input('Ingrese idioma que desea filtrar: '))

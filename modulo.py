@@ -84,6 +84,31 @@ def leer_binario(i):
     m.close()
 
 
+def fill_list(vec, i, vec_reg):
+    index = 0 
+    for elem in range(len(vec_reg)):
+        if vec_reg[elem].idioma == i and index <= len(vec) - 1:
+            vec[index] = vec_reg[elem]
+            index += 1
+
+
+def empty_pos(vec):
+    empty = False
+
+    for elem in vec:
+        if elem == '':
+            empty = True
+            break
+        
+    return empty 
+
+
+def mostrar_lista_opt2(vec):
+    for elem in vec:
+        if elem != '':
+            print(elem)
+
+
 def principal():
     v = []
     print('prueba')
